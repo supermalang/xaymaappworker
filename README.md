@@ -53,3 +53,5 @@ The configuration above runs every minute. If you want to run the cron jobs on a
 
 ## Logs
 Cron job execution logs are written to /var/log/cron.log inside the container. You can access them using the following command:
+
+---
