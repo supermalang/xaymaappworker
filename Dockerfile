@@ -9,9 +9,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/cache/apk/*
 
 COPY ./consume-command.sh /entrypoint.sh
-COPY ./messenger-worker.conf /etc/supervisor/conf.d/messenger-worker.conf
-
-WORKDIR /var/www/app.xayma.sh/
+COPY ./messenger-worker.conf /etc/supervisor/supervisord.conf
 
 USER www-data
+WORKDIR /var/www/app.xayma.sh/
+
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+
+EXPOSE 9001

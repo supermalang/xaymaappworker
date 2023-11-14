@@ -1,2 +1,2 @@
 #!/bin/bash
-supervisorctl start messenger-consume:*
+supervisord && supervisorctl start messenger-consume:*
