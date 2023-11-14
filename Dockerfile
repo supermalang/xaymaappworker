@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /tmp/pear \
     && rm -rf /var/cache/apk/*
 
-COPY ./consume-commands.sh /entrypoint.sh
+COPY ./consume-command.sh /entrypoint.sh
 COPY ./messenger-worker.conf /etc/supervisor/conf.d/messenger-worker.conf
 
 WORKDIR /var/www/app.xayma.sh/
